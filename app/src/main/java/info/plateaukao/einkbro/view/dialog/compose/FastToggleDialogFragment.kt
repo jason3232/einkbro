@@ -141,6 +141,13 @@ fun FastToggleItemList(context: Context, config: ConfigManager, onClicked: ((Boo
             onClicked(false)
         }
         ToggleItem(
+            state = config.leftRightPageTurn,
+            titleResId = R.string.leftright_page_turn, imageVector = Icons.AutoMirrored.Outlined.VolumeUp
+        ) {
+            config::leftRightPageTurn.toggle()
+            onClicked(false)
+        }
+        ToggleItem(
             state = config.continueMedia,
             titleResId = R.string.media_continue, imageVector = Icons.Outlined.MusicNote
         ) {

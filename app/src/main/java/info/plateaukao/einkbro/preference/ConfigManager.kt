@@ -61,6 +61,7 @@ class ConfigManager(
     )
     var touchAreaHint by BooleanPreference(sp, K_TOUCH_HINT, true)
     var volumePageTurn by BooleanPreference(sp, K_VOLUME_PAGE_TURN, true)
+    var leftRightPageTurn by BooleanPreference(sp, K_LEFTRIGHT_PAGE_TURN, true)
     var boldFontStyle by BooleanPreference(sp, K_BOLD_FONT, false)
     var blackFontStyle by BooleanPreference(sp, K_BLACK_FONT, false)
     var shouldSaveTabs by BooleanPreference(sp, K_SHOULD_SAVE_TABS, true)
@@ -849,6 +850,7 @@ class ConfigManager(
         const val K_TTS_SPEED_VALUE = "sp_tts_speed"
         const val K_FAVORITE_URL = "favoriteURL"
         const val K_VOLUME_PAGE_TURN = "volume_page_turn"
+        const val K_LEFTRIGHT_PAGE_TURN = "leftright_page_turn"
         const val K_SHOULD_SAVE_TABS = "sp_shouldSaveTabs"
         const val K_SAVED_ALBUM_INFO = "sp_saved_album_info"
         const val K_SAVED_ALBUM_INDEX = "sp_saved_album_index"

@@ -275,6 +275,7 @@
     <string name="book_name">Book Name</string>
     <string name="book_name_description">Input the book name</string>
     <string name="volume_page_turn">Volume key</string>
+    <string name="leftright_page_turn">Left/Right key</string>
     <string name="folder_name">Bookmark folder name</string>
     <string name="folder_name_description">Insert Bookmark folder name</string>
     <string name="setting_title_export_bookmarks">Export bookmarks</string>

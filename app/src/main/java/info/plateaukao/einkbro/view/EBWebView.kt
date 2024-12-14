@@ -529,7 +529,10 @@ open class EBWebView(
         scrollX = min(computeHorizontalScrollRange() - width, scrollX)
     } else { // normal case
         val nonNullUrl = url.orEmpty()
-        if (config.shouldFixScroll(nonNullUrl) || config.shouldSendPageNavKey(nonNullUrl)) {
+        if (config.leftRightPageTurn) {
+            sendRightKey()
+        }
+        else if (config.shouldFixScroll(nonNullUrl) || config.shouldSendPageNavKey(nonNullUrl)) {
             sendPageDownKey()
         } else {
             scrollBy(0, shiftOffset())
@@ -542,7 +545,10 @@ open class EBWebView(
         scrollX = max(0, scrollX)
     } else { // normal case
         val nonNullUrl = url.orEmpty()
-        if (config.shouldFixScroll(nonNullUrl) || config.shouldSendPageNavKey(nonNullUrl)) {
+        if (config.leftRightPageTurn) {
+            sendLeftKey()
+        }
+        else if (config.shouldFixScroll(nonNullUrl) || config.shouldSendPageNavKey(nonNullUrl)) {
             sendPageUpKey()
         } else {
             scrollBy(0, -shiftOffset())
@@ -553,6 +559,10 @@ open class EBWebView(
     fun sendPageDownKey() = sendKeyEventToView(KeyEvent.KEYCODE_PAGE_DOWN)
 
     fun sendPageUpKey() = sendKeyEventToView(KeyEvent.KEYCODE_PAGE_UP)
+
+    fun sendLeftKey() = sendKeyEventToView(KeyEvent.KEYCODE_DPAD_LEFT)
+
+    fun sendRightKey() = sendKeyEventToView(KeyEvent.KEYCODE_DPAD_RIGHT)
 
     fun removeTextSelection() {
         evaluateJavascript(
